@@ -1,7 +1,7 @@
 {
   "name": "devchat-web-electron",
   "productName": "DevChat",
-  "version": "0.3.1-alpha",
+  "version": "0.4.0-alpha",
   "main": "src/main.js",
   "description": "Dev Chat",
   "license": "MIT",
