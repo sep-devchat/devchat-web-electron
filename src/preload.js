@@ -3,6 +3,7 @@ const { contextBridge, ipcRenderer } = require("electron");
 const nativeAPINames = [
   "openBrowserForLogin",
   "showMessageNotification",
+  "showElectronApp",
 ];
 
 const api = {};
