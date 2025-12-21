@@ -1,7 +1,7 @@
 const { createWindow } = require("./window");
 
 let mainWindow = null;
-let pendingDeepLink = null; // { url, code }
+let pendingDeepLink = null; // { url, code, path, searchParams }
 let forceQuit = false;
 
 function setMainWindow(win) {

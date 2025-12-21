@@ -18,15 +18,21 @@ function registerProtocol() {
 
 function parseDeepLink(url) {
   let code = "";
+  let pathName = "";
+  const searchParams = {};
   try {
     const u = new URL(url);
     if (u.protocol.replace(/:$/, "") === SCHEME) {
       code = u.searchParams.get("code") ?? "";
+        pathName = u.pathname || "";
+        u.searchParams.forEach((value, key) => {
+          searchParams[key] = value;
+        });
     }
   } catch (err) {
     console.warn("Failed to parse deep link", url, err);
   }
-  return { url, code };
+    return { url, code, path: pathName, searchParams };
 }
 
 function focusAndSend(win, payload) {
